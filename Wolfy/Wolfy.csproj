@@ -58,6 +58,7 @@
     <Compile Include="Commands\Commands.cs" />
     <Compile Include="Commands\Workers\CommandWorker.cs" />
     <Compile Include="Commands\Workers\CommandWorker_Simple.cs" />
+    <Compile Include="Commands\Workers\CommandWorker_SimpleInteractive.cs" />
     <Compile Include="Modules\CooldownManagerModule.cs" />
     <Compile Include="Modules\JsonCommandsReaderModule.cs" />
     <Compile Include="Modules\WolfyPersonalityModule.cs" />

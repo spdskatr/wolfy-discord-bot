@@ -75,10 +75,15 @@ namespace Wolfy.Commands.Workers
                     if (chance >= 1.0 || chance > random.NextDouble())
                     {
                         Client.GetModule<CooldownManagerModule>().CommandRun(GetUniqueId());
-                        await e.Message.RespondAsync(response);
+                        await SendMessage(e);
                     }
                 }
             }
+        }
+
+        protected virtual Task SendMessage(MessageCreateEventArgs e)
+        {
+            return e.Message.RespondAsync(response);
         }
 
         public string GetUniqueId()

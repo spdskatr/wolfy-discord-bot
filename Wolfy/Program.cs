@@ -40,6 +40,12 @@ namespace Wolfy
                 EnableDefaultHelp = false,
                 StringPrefix = "!"
             });
+            interactivity = client.UseInteractivity(new InteractivityConfiguration()
+            {
+                PaginationBehaviour = TimeoutBehaviour.Ignore,
+                PaginationTimeout = TimeSpan.FromMinutes(5),
+                Timeout = TimeSpan.FromMinutes(5)
+            });
             client.ClientErrored += Client_ClientErrored;
             AddAllModules();
         }

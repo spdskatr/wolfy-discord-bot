@@ -67,7 +67,7 @@
     "trigger": "orassan",
     "response": "Here kitty kitty...",
     "chance": 1,
-    "cooldown": 1800000
+    "cooldown": 60000
   },
   {
     "type": "CommandWorker_Simple",
@@ -82,5 +82,15 @@
     "response": "Yay!~",
     "chance": 1,
     "cooldown": 10000
+  },
+  {
+    "type": "CommandWorker_SimpleInteractive",
+    "trigger": "<:wolfybone:259416003534913537>",
+    "response": "Is that for me?!",
+    "chance": 1,
+    "cooldown": 60000,
+    "waitFor": "^(mhm!?|yes!?|yep!?)$",
+    "waitMode": "regex",
+    "waitReply":  "Yay! Thank you!"
   }
 ]

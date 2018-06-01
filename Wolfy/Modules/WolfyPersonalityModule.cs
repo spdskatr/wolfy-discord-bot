@@ -25,7 +25,7 @@ namespace Wolfy.Modules
             DiscordChannel channel = await Client.GetChannelAsync(214523379766525963);
             if (channel != null)
             {
-                await channel.SendMessageAsync("I\'m back! <:awoo:254007902510120961>");
+                //await channel.SendMessageAsync("I\'m back! <:awoo:254007902510120961>");
             }
         }
 
@@ -36,7 +36,7 @@ namespace Wolfy.Modules
                 DiscordChannel channel = await Client.GetChannelAsync(214523379766525963);
                 if (channel != null && !weekend)
                 {
-                    await channel.SendMessageAsync("Yay it\'s finally the weekend! Hope everyone is having an amazing Saturday so far!\r\nhttp://i.imgur.com/VKDm9Pj.png");
+                    //await channel.SendMessageAsync("Yay it\'s finally the weekend! Hope everyone is having an amazing Saturday so far!\r\nhttp://i.imgur.com/VKDm9Pj.png");
                     weekend = true;
                 }
             }
