@@ -33,11 +33,9 @@ namespace Wolfy.Commands.Workers
                 waitReply = tok["waitReply"].Value<string>();
             }
         }
-        protected override async Task SendMessage(MessageCreateEventArgs e)
-        {
-            await base.SendMessage(e);
-            Client.GetInteractivityModule().WaitForMessageAsync(TriggeredMessage, TimeSpan.FromMinutes(5)).ContinueWith(t => { if (t.Result == null) e.Message.RespondAsync(waitReply); });
-        }
+
+        // TODO: Actually implement interactivity
+
         public bool TriggeredMessage(DiscordMessage message)
         {
             bool triggered = false;
