@@ -1,0 +1,94 @@
+﻿[
+  {
+    "type": "CommandWorker_Simple",
+    "trigger": "<:awooflip:258576454097436673>",
+    "response": "<:awooflip:258576454097436673>",
+    "mode": "contains",
+    "chance": 0.01,
+    "cooldown": 0
+  },
+  {
+    "type": "CommandWorker_Simple",
+    "trigger": "<:negawoo:258576688605036544>",
+    "response": "<:negawoo:258576688605036544>",
+    "mode": "contains",
+    "chance": 0.01,
+    "cooldown": 0
+  },
+  {
+    "type": "CommandWorker_Simple",
+    "trigger": "<:winnieawoo:259027322177323009>",
+    "response": "<:winnieawoo:259027322177323009>",
+    "mode": "contains",
+    "chance": 0.01,
+    "cooldown": 0
+  },
+  {
+    "type": "CommandWorker_Simple",
+    "trigger": "<:upsideawoo:258576454101499904>",
+    "response": "<:upsideawoo:258576454101499904>",
+    "mode": "contains",
+    "chance": 0.02,
+    "cooldown": 0
+  },
+  {
+    "type": "CommandWorker_Simple",
+    "trigger": "<:goingupawoo:258576454114213888>",
+    "response": "<:goingupawoo:258576454114213888>",
+    "mode": "contains",
+    "chance": 0.04,
+    "cooldown": 0
+  },
+  {
+    "type": "CommandWorker_Simple",
+    "trigger": "<:sideawoo:258576454663536650>",
+    "response": "<:sideawoo:258576454663536650>",
+    "mode": "contains",
+    "chance": 0.05,
+    "cooldown": 0
+  },
+  {
+    "type": "CommandWorker_Simple",
+    "trigger": "<:awoo:254007902510120961>",
+    "response": "<:awoo:254007902510120961>",
+    "mode": "contains",
+    "chance": 0.15,
+    "cooldown": 0
+  },
+  {
+    "type": "CommandWorker_Simple",
+    "trigger": "ding",
+    "response": "Ding!",
+    "mode": "contains",
+    "chance": 0.05,
+    "cooldown": 0
+  },
+  {
+    "type": "CommandWorker_Simple",
+    "trigger": "lewd",
+    "response": "Hehe...\r\nhttp://imgur.com/sq28eVz",
+    "chance": 1,
+    "cooldown": 0
+  },
+  {
+    "type": "CommandWorker_Simple",
+    "trigger": "orassan",
+    "response": "Here kitty kitty...",
+    "chance": 1,
+    "cooldown": 1800000
+  },
+  {
+    "type": "CommandWorker_Simple",
+    "trigger": "*pets the awoo*",
+    "response": "Awoo~ <:awoo:254007902510120961>",
+    "chance": 1,
+    "cooldown": 10000
+  },
+  {
+    "type": "CommandWorker_Simple",
+    "trigger": "good girl wolfy!",
+    "response": "Yay!~",
+    "chance": 1,
+    "cooldown": 10000
+  }
+]
