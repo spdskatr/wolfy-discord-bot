@@ -29,6 +29,7 @@ namespace Wolfy.Modules
                     if (typeof(CommandWorker).IsAssignableFrom(t))
                     {
                         CommandWorker cw = (CommandWorker)Activator.CreateInstance(t);
+                        cw.RegisterClient(client);
                         cw.LoadDataFromJson(tok);
                         workers.Add(cw);
                         client.DebugLogger.LogMessage(LogLevel.Debug, "Wolfy", $"Loaded command {cw}", DateTime.Now);

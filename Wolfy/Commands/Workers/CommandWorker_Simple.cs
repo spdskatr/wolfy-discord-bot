@@ -33,7 +33,7 @@ namespace Wolfy.Commands.Workers
             }
             if (tok["mode"] != null)
             {
-                response = tok["mode"].Value<string>();
+                mode = tok["mode"].Value<string>();
             }
             if (tok["chance"] != null)
             {
@@ -70,7 +70,7 @@ namespace Wolfy.Commands.Workers
             }
             if (triggered)
             {
-                if (cooldown < 0 || Client.GetModule<CooldownManagerModule>().CanRunCommand(GetUniqueId(), cooldown))
+                if (cooldown <= 0 || Client.GetModule<CooldownManagerModule>().CanRunCommand(GetUniqueId(), cooldown))
                 {
                     if (chance >= 1.0 || chance > random.NextDouble())
                     {

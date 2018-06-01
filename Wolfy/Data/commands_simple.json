@@ -52,7 +52,7 @@
     "trigger": "<:awoo:254007902510120961>",
     "response": "<:awoo:254007902510120961>",
     "mode": "contains",
-    "chance": 0.15,
+    "chance": 0.99,
     "cooldown": 0
   },
   {

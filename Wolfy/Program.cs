@@ -89,7 +89,6 @@ namespace Wolfy
         static void Main(string[] args)
         {
             Program prog = new Program();
-            Debugger.Break();
             prog.StartAsync().ConfigureAwait(false).GetAwaiter().GetResult();
         }
     }

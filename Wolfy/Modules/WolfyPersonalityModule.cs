@@ -12,7 +12,7 @@ namespace Wolfy.Modules
     // 10/10 name tho
     public class WolfyPersonalityModule : BaseModule
     {
-        bool weekend;
+        bool weekend = false;
         protected override void Setup(DiscordClient client)
         {
             Client = client;
@@ -34,9 +34,10 @@ namespace Wolfy.Modules
             if (DateTime.Now.DayOfWeek == DayOfWeek.Saturday && DateTime.Now.Hour > 9)
             {
                 DiscordChannel channel = await Client.GetChannelAsync(434961971838844929);
-                if (channel != null)
+                if (channel != null && !weekend)
                 {
                     await channel.SendMessageAsync("Yay it\'s finally the weekend! Hope everyone is having an amazing Saturday so far!\r\nhttp://i.imgur.com/VKDm9Pj.png");
+                    weekend = true;
                 }
             }
         }
