@@ -57,14 +57,6 @@
   },
   {
     "type": "CommandWorker_Simple",
-    "trigger": "ding",
-    "response": "Ding!",
-    "mode": "contains",
-    "chance": 0.05,
-    "cooldown": 0
-  },
-  {
-    "type": "CommandWorker_Simple",
     "trigger": "lewd",
     "response": "Hehe...\r\nhttp://imgur.com/sq28eVz",
     "chance": 1,

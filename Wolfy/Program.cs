@@ -28,7 +28,7 @@ namespace Wolfy
 #if DEBUG
                 LogLevel = LogLevel.Debug,
 #else
-                LogLevel = LogLevel.Info
+                LogLevel = LogLevel.Info,
 #endif
                 TokenType = TokenType.Bot,
                 Token = token
@@ -40,7 +40,14 @@ namespace Wolfy
                 EnableDefaultHelp = false,
                 StringPrefix = "!"
             });
+            client.ClientErrored += Client_ClientErrored;
             AddAllModules();
+        }
+
+        private Task Client_ClientErrored(DSharpPlus.EventArgs.ClientErrorEventArgs e)
+        {
+            e.Client.DebugLogger.LogMessage(LogLevel.Error, "DSharpPlus", "Unhandled exception - message: " + e.Exception, DateTime.Now);
+            return Task.CompletedTask;
         }
 
         void AddAllModules()
