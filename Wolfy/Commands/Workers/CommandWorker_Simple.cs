@@ -14,12 +14,12 @@ namespace Wolfy.Commands.Workers
 {
     public class CommandWorker_Simple : CommandWorker
     {
-        public static Random random = new Random();
         public string trigger;
         public string response;
         public string mode = "whole";
         public double chance = 1.0;
         public long cooldown;
+        public List<CommandCondition> conditions = new List<CommandCondition>();
 
         public override void LoadDataFromJson(JToken tok)
         {
@@ -43,42 +43,50 @@ namespace Wolfy.Commands.Workers
             {
                 cooldown = tok["cooldown"].Value<long>();
             }
-        }
-
-        public override async Task Process(MessageCreateEventArgs e)
-        {
-            bool triggered = false;
-            switch (mode)
+            if (tok["conditions"] != null)
             {
-                case "whole_case_sensitive":
-                    triggered = e.Message.Content == trigger;
-                    break;
-                case "whole":
-                    triggered = e.Message.Content.ToLower() == trigger.ToLower();
-                    break;
-                case "contains":
-                    triggered = e.Message.Content.ToLower().Contains(trigger.ToLower());
-                    break;
-                case "regex_case_sensitive":
-                    triggered = Regex.IsMatch(e.Message.Content, trigger);
-                    break;
-                case "regex":
-                    triggered = Regex.IsMatch(e.Message.Content, trigger, RegexOptions.IgnoreCase);
-                    break;
-                default:
-                    break;
-            }
-            if (triggered)
-            {
-                if (cooldown <= 0 || Client.GetModule<CooldownManagerModule>().CanRunCommand(GetUniqueId(), cooldown))
+                foreach (JToken cond in tok["conditions"])
                 {
-                    if (chance >= 1.0 || chance > random.NextDouble())
+                    Type t = Type.GetType("Wolfy.Commands.Workers." + cond["type"]);
+                    if (t != null)
                     {
-                        Client.GetModule<CooldownManagerModule>().CommandRun(GetUniqueId());
-                        await SendMessage(e);
+                        if (typeof(CommandCondition).IsAssignableFrom(t))
+                        {
+                            CommandCondition cw = (CommandCondition)Activator.CreateInstance(t);
+                            cw.LoadDataFromJson(cond);
+                            conditions.Add(cw);
+                        }
+                        else
+                        {
+                            Client.DebugLogger.LogMessage(LogLevel.Error, "Wolfy", $"Exception loading command conditions for worker {this}: Type {t} does not derive from Wolfy.Commands.Workers.CommandCondition\r\n\r\nData: {tok}", DateTime.Now);
+                        }
+                    }
+                    else
+                    {
+                        Client.DebugLogger.LogMessage(LogLevel.Error, "Wolfy", $"Exception loading command conditions for worker {this}: Could not find type Wolfy.Commands.Workers.{t}\r\n\r\nData: {cond}", DateTime.Now);
                     }
                 }
             }
+        }
+
+        public override async Task<bool> Process(MessageCreateEventArgs e)
+        {
+            if (e.Message.Content.IsMatch(trigger, mode))
+            {
+                if (cooldown <= 0 || Client.GetModule<CooldownManagerModule>().CanRunCommand(GetUniqueId(), cooldown))
+                {
+                    if (chance >= 1.0 || chance > Rand.Instance.NextDouble())
+                    {
+                        if (conditions.All(c => c.CanExecute(e)))
+                        {
+                            Client.GetModule<CooldownManagerModule>().CommandRun(GetUniqueId());
+                            await SendMessage(e);
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
         }
 
         protected virtual Task SendMessage(MessageCreateEventArgs e)
@@ -93,7 +101,17 @@ namespace Wolfy.Commands.Workers
 
         public override string ToString()
         {
-            return $"[ trigger: {trigger}, response: {response}, mode: {mode}, chance: {chance}, cooldown: {cooldown} ]";
+            return $"[ {string.Join(", ", Describe().OrderBy(s => s))} ]";
+        }
+
+        public virtual IEnumerable<string> Describe()
+        {
+            yield return $"trigger: {trigger}";
+            yield return $"response: {response}";
+            yield return $"mode: {mode}";
+            yield return $"chance: {chance}";
+            yield return $"cooldown: {cooldown}";
+            yield return $"conditions: [{string.Join(", ", conditions.OrderBy(c => c.ToString()))}]";
         }
     }
 }

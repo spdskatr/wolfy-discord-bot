@@ -36,12 +36,12 @@ namespace Wolfy.Modules
                     }
                     else
                     {
-                        client.DebugLogger.LogMessage(LogLevel.Error, "Wolfy", $"Exception loading from commands_simple.json: Type {t} does not derive from Wolfy.Commands.Workers.CommandWorker\r\n\r\nData: {tok}", DateTime.Now);
+                        client.DebugLogger.LogMessage(LogLevel.Error, "Wolfy", $"Exception loading command workers: Type {t} does not derive from Wolfy.Commands.Workers.CommandWorker\r\n\r\nData: {tok}", DateTime.Now);
                     }
                 }
                 else
                 {
-                    client.DebugLogger.LogMessage(LogLevel.Error, "Wolfy", $"Exception loading from commands_simple.json: Could not find type Wolfy.Commands.Workers.{type}\r\n\r\nData: {tok}", DateTime.Now);
+                    client.DebugLogger.LogMessage(LogLevel.Error, "Wolfy", $"Exception loading command workers: Could not find type Wolfy.Commands.Workers.{type}\r\n\r\nData: {tok}", DateTime.Now);
                 }
             }
             client.MessageCreated += e => Task.WhenAll(from cw in workers select cw.Process(e));

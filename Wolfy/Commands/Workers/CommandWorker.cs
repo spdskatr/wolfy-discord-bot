@@ -20,6 +20,6 @@ namespace Wolfy.Commands.Workers
             this.client = client;
         }
         public abstract void LoadDataFromJson(JToken tok);
-        public abstract Task Process(MessageCreateEventArgs e);
+        public abstract Task<bool> Process(MessageCreateEventArgs e);
     }
 }

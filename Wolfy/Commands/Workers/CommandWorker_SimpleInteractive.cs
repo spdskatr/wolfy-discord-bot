@@ -14,6 +14,7 @@ namespace Wolfy.Commands.Workers
 {
     public class CommandWorker_SimpleInteractive : CommandWorker_Simple
     {
+        public HashSet<ulong> membersWaitingForInteraction = new HashSet<ulong>();
         public string waitFor;
         public string waitMode = "whole";
         public string waitReply;
@@ -33,33 +34,31 @@ namespace Wolfy.Commands.Workers
                 waitReply = tok["waitReply"].Value<string>();
             }
         }
-
-        // TODO: Actually implement interactivity
-
-        public bool TriggeredMessage(DiscordMessage message)
+        
+        public override async Task<bool> Process(MessageCreateEventArgs e)
         {
-            bool triggered = false;
-            switch (waitMode)
+            bool result = await base.Process(e);
+            if (result)
             {
-                case "whole_case_sensitive":
-                    triggered = message.Content == waitFor;
-                    break;
-                case "whole":
-                    triggered = message.Content.ToLower() == waitFor.ToLower();
-                    break;
-                case "contains":
-                    triggered = message.Content.ToLower().Contains(waitFor.ToLower());
-                    break;
-                case "regex_case_sensitive":
-                    triggered = Regex.IsMatch(message.Content, waitFor);
-                    break;
-                case "regex":
-                    triggered = Regex.IsMatch(message.Content, waitFor, RegexOptions.IgnoreCase);
-                    break;
-                default:
-                    break;
+                membersWaitingForInteraction.Add(e.Author.Id);
             }
-            return triggered;
+            else
+            {
+                if (membersWaitingForInteraction.Contains(e.Author.Id) && e.Message.Content.IsMatch(waitFor, waitMode))
+                {
+                    await e.Message.RespondAsync(waitReply);
+                    membersWaitingForInteraction.Remove(e.Author.Id);
+                }
+            }
+            return result;
+        }
+        public override IEnumerable<string> Describe()
+        {
+            foreach (string str in base.Describe())
+                yield return str;
+            yield return $"waitFor: {waitFor}";
+            yield return $"waitMode: {waitMode}";
+            yield return $"waitReply: {waitReply}";
         }
     }
 }
