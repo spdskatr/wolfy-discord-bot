@@ -101,17 +101,7 @@ namespace Wolfy.Commands.Workers
 
         public override string ToString()
         {
-            return $"[ {string.Join(", ", Describe().OrderBy(s => s))} ]";
-        }
-
-        public virtual IEnumerable<string> Describe()
-        {
-            yield return $"trigger: {trigger}";
-            yield return $"response: {response}";
-            yield return $"mode: {mode}";
-            yield return $"chance: {chance}";
-            yield return $"cooldown: {cooldown}";
-            yield return $"conditions: [{string.Join(", ", conditions.OrderBy(c => c.ToString()))}]";
+            return trigger;
         }
     }
 }

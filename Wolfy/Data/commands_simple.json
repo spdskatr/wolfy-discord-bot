@@ -110,14 +110,14 @@
     "trigger": "bone",
     "response": "Bone?! Where!? I want a bone please!",
     "mode": "contains",
-    "cooldown": 60000
+    "cooldown": 1800000
   },
   {
     "type": "CommandWorker_Simple",
     "trigger": "steak",
     "response": "Steak?! We have steak?! Why didn't anyone tell me I really want one please can I have one please please please!?",
     "mode": "contains",
-    "cooldown": 60000
+    "cooldown": 1800000
   },
   {
     "type": "CommandWorker_Simple",

@@ -38,9 +38,6 @@
     <Reference Include="DSharpPlus.CommandsNext, Version=3.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DSharpPlus.CommandsNext.3.2.3\lib\net46\DSharpPlus.CommandsNext.dll</HintPath>
     </Reference>
-    <Reference Include="DSharpPlus.Interactivity, Version=3.2.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DSharpPlus.Interactivity.3.2.3\lib\net46\DSharpPlus.Interactivity.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -55,7 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\CommandModuleAttribute.cs" />
-    <Compile Include="Commands\Commands.cs" />
+    <Compile Include="Commands\HelpCommand.cs" />
+    <Compile Include="Commands\ImgurCommands.cs" />
     <Compile Include="Commands\Workers\CommandCondition.cs" />
     <Compile Include="Commands\Workers\CommandCondition_RequireRole.cs" />
     <Compile Include="Commands\Workers\CommandWorker.cs" />

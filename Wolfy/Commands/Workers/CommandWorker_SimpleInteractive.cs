@@ -7,7 +7,6 @@ using DSharpPlus.EventArgs;
 using Newtonsoft.Json.Linq;
 using DSharpPlus;
 using DSharpPlus.Entities;
-using DSharpPlus.Interactivity;
 using System.Text.RegularExpressions;
 
 namespace Wolfy.Commands.Workers
@@ -51,14 +50,6 @@ namespace Wolfy.Commands.Workers
                 }
             }
             return result;
-        }
-        public override IEnumerable<string> Describe()
-        {
-            foreach (string str in base.Describe())
-                yield return str;
-            yield return $"waitFor: {waitFor}";
-            yield return $"waitMode: {waitMode}";
-            yield return $"waitReply: {waitReply}";
         }
     }
 }

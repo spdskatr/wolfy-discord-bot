@@ -8,20 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using DSharpPlus;
 using DSharpPlus.CommandsNext;
-using DSharpPlus.Interactivity;
 using Wolfy.Commands;
 
 namespace Wolfy
 {
     public class Program
     {
+        public static Program instance;
         public DiscordClient client;
         public CommandsNextModule commandsNext;
-        public InteractivityModule interactivity;
+        public string[] auth;
 
         public Program()
         {
-            string token = File.ReadAllText("Data/auth.txt");
+            auth = File.ReadAllLines("Data/auth.txt");
             client = new DiscordClient(new DiscordConfiguration()
             {
                 UseInternalLogHandler = true,
@@ -31,7 +31,7 @@ namespace Wolfy
                 LogLevel = LogLevel.Info,
 #endif
                 TokenType = TokenType.Bot,
-                Token = token
+                Token = auth[0]
             });
             commandsNext = client.UseCommandsNext(new CommandsNextConfiguration()
             {
@@ -39,12 +39,6 @@ namespace Wolfy
                 EnableMentionPrefix = false,
                 EnableDefaultHelp = false,
                 StringPrefix = "!"
-            });
-            interactivity = client.UseInteractivity(new InteractivityConfiguration()
-            {
-                PaginationBehaviour = TimeoutBehaviour.Ignore,
-                PaginationTimeout = TimeSpan.FromMinutes(5),
-                Timeout = TimeSpan.FromMinutes(5)
             });
             client.ClientErrored += Client_ClientErrored;
             AddAllModules();
@@ -101,8 +95,8 @@ namespace Wolfy
 
         static void Main(string[] args)
         {
-            Program prog = new Program();
-            prog.StartAsync().ConfigureAwait(false).GetAwaiter().GetResult();
+            instance = new Program();
+            instance.StartAsync().ConfigureAwait(false).GetAwaiter().GetResult();
         }
     }
 }

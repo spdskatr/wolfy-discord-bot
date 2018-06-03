@@ -14,7 +14,7 @@ namespace Wolfy.Modules
     public class JsonCommandsReaderModule : BaseModule
     {
         string json;
-        List<CommandWorker> workers = new List<CommandWorker>();
+        public List<CommandWorker> workers = new List<CommandWorker>();
         protected override void Setup(DiscordClient client)
         {
             Client = client;
@@ -44,7 +44,7 @@ namespace Wolfy.Modules
                     client.DebugLogger.LogMessage(LogLevel.Error, "Wolfy", $"Exception loading command workers: Could not find type Wolfy.Commands.Workers.{type}\r\n\r\nData: {tok}", DateTime.Now);
                 }
             }
-            client.MessageCreated += e => Task.WhenAll(from cw in workers select cw.Process(e));
+            client.MessageCreated += e => Task.WhenAny(from cw in workers select cw.Process(e));
         }
     }
 }
