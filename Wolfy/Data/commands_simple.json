@@ -328,5 +328,10 @@
         "id": 214527027112312834
       }
     ]
+  },
+  {
+    "type": "CommandWorker_Simple",
+    "trigger": "Wolfy let's hold hands!",
+    "response": "<:gabeisprettyfuckingfat:434927245203865600>"
   }
 ]
