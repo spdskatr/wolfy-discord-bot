@@ -18,6 +18,13 @@ namespace Wolfy.Modules
         protected override void Setup(DiscordClient client)
         {
             Client = client;
+            LoadAllWorkers();
+            client.MessageCreated += e => Task.WhenAny(from cw in workers select cw.Process(e));
+        }
+
+        public void LoadAllWorkers()
+        {
+            workers.Clear();
             json = File.ReadAllText("Data/commands_simple.json");
             JArray jArray = JArray.Parse(json);
             foreach (JToken tok in jArray)
@@ -29,22 +36,21 @@ namespace Wolfy.Modules
                     if (typeof(CommandWorker).IsAssignableFrom(t))
                     {
                         CommandWorker cw = (CommandWorker)Activator.CreateInstance(t);
-                        cw.RegisterClient(client);
+                        cw.RegisterClient(Client);
                         cw.LoadDataFromJson(tok);
                         workers.Add(cw);
-                        client.DebugLogger.LogMessage(LogLevel.Debug, "Wolfy", $"Loaded command {cw}", DateTime.Now);
+                        Client.DebugLogger.LogMessage(LogLevel.Debug, "Wolfy", $"Loaded command {cw}", DateTime.Now);
                     }
                     else
                     {
-                        client.DebugLogger.LogMessage(LogLevel.Error, "Wolfy", $"Exception loading command workers: Type {t} does not derive from Wolfy.Commands.Workers.CommandWorker\r\n\r\nData: {tok}", DateTime.Now);
+                        Client.DebugLogger.LogMessage(LogLevel.Error, "Wolfy", $"Exception loading command workers: Type {t} does not derive from Wolfy.Commands.Workers.CommandWorker\r\n\r\nData: {tok}", DateTime.Now);
                     }
                 }
                 else
                 {
-                    client.DebugLogger.LogMessage(LogLevel.Error, "Wolfy", $"Exception loading command workers: Could not find type Wolfy.Commands.Workers.{type}\r\n\r\nData: {tok}", DateTime.Now);
+                    Client.DebugLogger.LogMessage(LogLevel.Error, "Wolfy", $"Exception loading command workers: Could not find type Wolfy.Commands.Workers.{type}\r\n\r\nData: {tok}", DateTime.Now);
                 }
             }
-            client.MessageCreated += e => Task.WhenAny(from cw in workers select cw.Process(e));
         }
     }
 }

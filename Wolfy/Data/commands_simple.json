@@ -60,7 +60,7 @@
     "trigger": "lewd",
     "response": "Hehe...\r\nhttp://imgur.com/sq28eVz",
     "mode": "contains",
-    "cooldown": 0
+    "cooldown": 1800000
   },
   {
     "type": "CommandWorker_Simple",
@@ -73,19 +73,13 @@
     "type": "CommandWorker_Simple",
     "trigger": "*pets the awoo*",
     "response": "Awoo~ <:awoo:254007902510120961>",
-    "cooldown": 10000
-  },
-  {
-    "type": "CommandWorker_Simple",
-    "trigger": "Wolfy let's hold hands!",
-    "response": "Urmmm ;w;\r\nLemme think of one",
-    "cooldown": 10000
+    "cooldown": 60000
   },
   {
     "type": "CommandWorker_Simple",
     "trigger": "good girl wolfy!",
     "response": "Yay!~",
-    "cooldown": 10000
+    "cooldown": 60000
   },
   {
     "type": "CommandWorker_SimpleInteractive",
@@ -123,7 +117,7 @@
     "type": "CommandWorker_Simple",
     "trigger": "i ain't afraid of no bed!",
     "response": "<:bustin:399356714820042753>",
-    "cooldown": 10000
+    "cooldown": 60000
   },
   {
     "type": "CommandWorker_ResetAllCooldowns",
@@ -192,25 +186,25 @@
     "type": "CommandWorker_Simple",
     "trigger": "i'm going to bed!",
     "response": "Night night! <:awoo:254007902510120961>",
-    "cooldown": 10000
+    "cooldown": 60000
   },
   {
     "type": "CommandWorker_Simple",
     "trigger": "<:wolfymoon:259759444622180352>",
     "response": "<:awoo:254007902510120961>",
-    "cooldown": 10000
+    "cooldown": 60000
   },
   {
     "type": "CommandWorker_Simple",
     "trigger": "wolfy?",
     "response": "Hmm?",
-    "cooldown": 10000
+    "cooldown": 60000
   },
   {
     "type": "CommandWorker_Simple",
     "trigger": "hey wolfy!",
     "response": "Howdy!",
-    "cooldown": 10000
+    "cooldown": 60000
   },
   {
     "type": "CommandWorker_ComplexInteractive",
@@ -243,25 +237,25 @@
     "trigger": "(hi|hello) wolfy!?",
     "mode": "regex",
     "response": "Hellooooo! <:awoo:254007902510120961>",
-    "cooldown": 10000
+    "cooldown": 60000
   },
   {
     "type": "CommandWorker_Simple",
     "trigger": "*rubs Wolfy's ear*",
     "response": "Y-you know... you could do that more often <3",
-    "cooldown": 10000
+    "cooldown": 60000
   },
   {
     "type": "CommandWorker_Simple",
     "trigger": "*hugs wolfy*",
     "response": "Hugs are the best!\r\nhttp://i.imgur.com/BOtQCIS.png",
-    "cooldown": 10000
+    "cooldown": 60000
   },
   {
     "type": "CommandWorker_Simple",
     "trigger": "*headpats wolfy*",
     "response": "http://i.imgur.com/Je3gP71.jpg",
-    "cooldown": 10000
+    "cooldown": 60000
   },
   {
     "type": "CommandWorker_WolfyFetch",
@@ -300,13 +294,13 @@
     "type": "CommandWorker_Simple",
     "trigger": "*scratches wolfy*",
     "response": "Mmmmmmmm...\r\nhttp://i.imgur.com/2NU6kMX.png",
-    "cooldown": 10000
+    "cooldown": 60000
   },
   {
     "type": "CommandWorker_Simple",
     "trigger": "*hands wolfy a cup of tea*",
     "response": "Mmm, thank you very much! This is just what I needed today!\r\nhttp://i.imgur.com/FUiOuIs.png",
-    "cooldown": 10000
+    "cooldown": 60000
   },
   {
     "type": "CommandWorker_ConsecutiveResponses",

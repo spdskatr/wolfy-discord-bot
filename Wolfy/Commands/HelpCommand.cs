@@ -22,7 +22,7 @@ namespace Wolfy.Commands
                 Title = "Wolfy help",
                 Description = "Hi, I'm Wolfy! <:awoo:254007902510120961>"
             };
-            builder.WithAuthor(ctx.Client.CurrentUser.Username);
+            builder.WithAuthor(ctx.Client.CurrentUser.Username, null, ctx.Client.CurrentUser.AvatarUrl);
             StringBuilder triggerBuilder = new StringBuilder();
             triggerBuilder.AppendLine("There isn't any official help for my triggers. Offer me a <:wolfybone:259416003534913537>, or tell me to do a flip? Maybe regulars know a few more things I can do.");
             builder.AddField("Triggers", triggerBuilder.ToString());

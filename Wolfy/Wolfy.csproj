@@ -26,7 +26,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -54,6 +54,7 @@
     <Compile Include="Commands\CommandModuleAttribute.cs" />
     <Compile Include="Commands\HelpCommand.cs" />
     <Compile Include="Commands\ImgurCommands.cs" />
+    <Compile Include="Commands\MetaCommands.cs" />
     <Compile Include="Commands\Workers\CommandCondition.cs" />
     <Compile Include="Commands\Workers\CommandCondition_RequireRole.cs" />
     <Compile Include="Commands\Workers\CommandWorker.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Commands\Workers\CommandWorker_WolfyFetch.cs" />
     <Compile Include="Modules\CooldownManagerModule.cs" />
     <Compile Include="Modules\JsonCommandsReaderModule.cs" />
+    <Compile Include="Modules\ReleaseBuildProfilerModule.cs" />
     <Compile Include="Modules\WolfyPersonalityModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
