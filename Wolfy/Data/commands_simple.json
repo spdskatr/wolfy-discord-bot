@@ -57,6 +57,14 @@
   },
   {
     "type": "CommandWorker_Simple",
+    "trigger": "<:gabeisprettyfuckingfat:434927245203865600>",
+    "response": "<:gabeisprettyfuckingfat:434927245203865600>",
+    "mode": "contains",
+    "chance": 0.15,
+    "cooldown": 0
+  },
+  {
+    "type": "CommandWorker_Simple",
     "trigger": "lewd",
     "response": "Hehe...\r\nhttp://imgur.com/sq28eVz",
     "mode": "contains",
@@ -221,7 +229,7 @@
         "response": "Please make sure not to drown :("
       },
       {
-        "trigger": "^(pretty )?(good|great|awesome|fantastic)[.!]?$",
+        "trigger": "^(pretty )?(good|great|awesome|fantastic)[\\.!]?$",
         "mode": "regex",
         "response": "That's great! I hope you keep having a good day!"
       },
@@ -332,6 +340,19 @@
   {
     "type": "CommandWorker_Simple",
     "trigger": "Wolfy let's hold hands!",
-    "response": "<:gabeisprettyfuckingfat:434927245203865600>"
+    "response": "<:gabeisprettyfuckingfat:434927245203865600>",
+    "cooldown": 60000
+  },
+  {
+    "type": "CommandWorker_Simple",
+    "trigger": "Wolfy, what do you think of Gabe?",
+    "response": "<:gabeisprettyfuckingfat:434927245203865600>",
+    "cooldown": 60000
+  },
+  {
+    "type": "CommandWorker_Simple",
+    "trigger": "I feel like gabe",
+    "response": "<:gabeisprettyfuckingfat:434927245203865600>",
+    "cooldown": 60000
   }
 ]
