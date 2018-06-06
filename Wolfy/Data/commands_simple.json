@@ -354,5 +354,17 @@
     "trigger": "I feel like gabe",
     "response": "<:gabeisprettyfuckingfat:434927245203865600>",
     "cooldown": 60000
+  },
+  {
+    "type": "CommandWorker_Simple",
+    "trigger": "^(hi|hello|sup)[\\.!]?$",
+    "response": "Hello! <:awoo:254007902510120961>",
+    "mode": "regex",
+    "cooldown": 10000,
+    "conditions": [
+      {
+        "type": "CommandCondition_OnlyInDms"
+      }
+    ]
   }
 ]

@@ -56,6 +56,8 @@
     <Compile Include="Commands\ImgurCommands.cs" />
     <Compile Include="Commands\MetaCommands.cs" />
     <Compile Include="Commands\Workers\CommandCondition.cs" />
+    <Compile Include="Commands\Workers\CommandCondition_NotInDms.cs" />
+    <Compile Include="Commands\Workers\CommandCondition_OnlyInDms.cs" />
     <Compile Include="Commands\Workers\CommandCondition_RequireRole.cs" />
     <Compile Include="Commands\Workers\CommandWorker.cs" />
     <Compile Include="Commands\Workers\CommandWorker_ChanceOptions.cs" />
