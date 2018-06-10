@@ -366,5 +366,12 @@
         "type": "CommandCondition_OnlyInDms"
       }
     ]
+  },
+  {
+    "type": "CommandWorker_Simple",
+    "trigger": "(fuck (u|you)|fugyu)",
+    "mode": "regex",
+    "response": "<:fuckawoo:416748583413612546>",
+    "cooldown": 300000
   }
 ]
