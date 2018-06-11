@@ -369,7 +369,7 @@
   },
   {
     "type": "CommandWorker_Simple",
-    "trigger": "(\\s+|^)(fuck|fug|f|eff)(\\s+|y)(y?u|you)",
+    "trigger": "(\\s+|^)(fuck|fug|f|eff)(\\s+|y)(y?u|you)u*(\\s+|$)",
     "mode": "regex",
     "response": "<:fuckawoo:416748583413612546>",
     "cooldown": 300000
