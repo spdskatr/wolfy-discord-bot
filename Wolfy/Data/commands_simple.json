@@ -94,18 +94,36 @@
     "trigger": "<:wolfybone:259416003534913537>",
     "response": "Is that for me?!",
     "cooldown": 60000,
-    "waitFor": "^(mhm|yes|yep|of course)!?$",
-    "waitMode": "regex",
-    "waitReply": "Yay! Thank you!"
+    "nodes": [
+      {
+        "trigger": "^(mhm|yes|yep|of course)[!.]?$",
+        "mode": "regex",
+        "response": "Yay! Thank you!"
+      },
+      {
+        "trigger": "^(no|nope|not at all)[!.]?$",
+        "mode": "regex",
+        "response": "Aww... I really wanted that bone ;~;"
+      }
+    ]
   },
   {
-    "type": "CommandWorker_SimpleInteractive",
+    "type": "CommandWorker_ComplexInteractive",
     "trigger": "<:wolfysteak:259416736082821121>",
     "response": "http://i.imgur.com/k6hofjr.png\r\nCan.... can I have that please...?",
     "cooldown": 60000,
-    "waitFor": "^(mhm|yes|yep|of course)!?$",
-    "waitMode": "regex",
-    "waitReply": "You're the greatest! *omnomnom* <3"
+    "nodes": [
+      {
+        "trigger": "^(mhm|yes|yep|of course)[!.]?$",
+        "mode": "regex",
+        "response": "You're the greatest! *omnomnom* <3"
+      },
+      {
+        "trigger": "^(no|nope|not at all)[!.]?$",
+        "mode": "regex",
+        "response": "Aww... I really wanted that steak ;~;"
+      }
+    ]
   },
   {
     "type": "CommandWorker_Simple",
@@ -287,12 +305,12 @@
     "cooldown": 60000,
     "nodes": [
       {
-        "trigger": "^(mhm|yes|yep|of course)!?$",
+        "trigger": "^(mhm|yes|yep|of course)[.!]?$",
         "mode": "regex",
         "response": "Yay! I'm so glad you like me!"
       },
       {
-        "trigger": "^(no|nope|not at all)!?$",
+        "trigger": "^(no|nope|not at all)[.!]?$",
         "mode": "regex",
         "response": ";~; I'm sorry... I'll try harder I swear.."
       }
