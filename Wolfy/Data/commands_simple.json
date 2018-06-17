@@ -90,7 +90,7 @@
     "cooldown": 60000
   },
   {
-    "type": "CommandWorker_SimpleInteractive",
+    "type": "CommandWorker_ComplexInteractive",
     "trigger": "<:wolfybone:259416003534913537>",
     "response": "Is that for me?!",
     "cooldown": 60000,
