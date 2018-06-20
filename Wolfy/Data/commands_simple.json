@@ -396,7 +396,7 @@
     "type": "CommandWorker_Simple",
     "trigger": "(wb|welcome back) +(wolfy|<@451890906975698954>)",
     "mode": "regex",
-    "response": "Thank you! <:awoo:254007902510120961> https://media.giphy.com/media/8vn8GRldK242QmvJT1/giphy.gif".
+    "response": "Thank you! <:awoo:254007902510120961> https://media.giphy.com/media/8vn8GRldK242QmvJT1/giphy.gif",
     "cooldown": 60000
   }
 ]
