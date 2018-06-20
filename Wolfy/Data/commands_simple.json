@@ -391,5 +391,12 @@
     "mode": "regex",
     "response": "<:fuckawoo:416748583413612546>",
     "cooldown": 300000
+  },
+  {
+    "type": "CommandWorker_Simple",
+    "trigger": "(wb|welcome back) +(wolfy|<@451890906975698954>)",
+    "mode": "regex",
+    "response": "Thank you! <:awoo:254007902510120961> https://media.giphy.com/media/8vn8GRldK242QmvJT1/giphy.gif".
+    "cooldown": 60000
   }
 ]
