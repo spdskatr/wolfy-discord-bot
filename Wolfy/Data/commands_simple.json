@@ -398,5 +398,18 @@
     "mode": "regex",
     "response": "Thank you! <:awoo:254007902510120961> https://media.giphy.com/media/8vn8GRldK242QmvJT1/giphy.gif",
     "cooldown": 60000
+  },
+  {
+    "type": "CommandWorker_Mention",
+    "trigger": "Wolfy, it's <@!?[0-9]+>'s birthday",
+    "mode": "regex",
+    "response": "Happy birthday {0}! <:awoo:254007902510120961>",
+    "cooldown": 60000,
+    "conditions": [
+      {
+        "type": "CommandCondition_RequireRole",
+        "id": 214527027112312834
+      }
+    ]
   }
 ]
