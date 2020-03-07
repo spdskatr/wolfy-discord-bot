@@ -411,5 +411,11 @@
         "id": 214527027112312834
       }
     ]
+  },
+  {
+	  "type": "CommandWorker_Simple",
+	  "trigger": "Wolfy, roll!",
+	  "response": "<a:awooroll:685689670205702145>",
+	  "cooldown": 60000
   }
 ]
