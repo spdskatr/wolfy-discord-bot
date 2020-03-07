@@ -193,7 +193,8 @@
   },
   {
     "type": "CommandWorker_Simple",
-    "trigger": "i love you <@451890906975698954>",
+    "trigger": "i love you <!?@451890906975698954>",
+	"mode": "regex",
     "response": "Aw.. I love you too <3 ~",
     "cooldown": 60000
   },
