@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "type": "CommandWorker_Simple",
     "trigger": "<:awooflip:258576454097436673>",
@@ -66,7 +66,7 @@
   {
     "type": "CommandWorker_Simple",
     "trigger": "<:lewdwinnie:297248606514184193>",
-    "response": "Hehe...\r\nhttp://imgur.com/sq28eVz",
+    "response": "Hehe...\r\nhttps://i.imgur.com/vwcje42.png",
     "cooldown": 60000
   },
   {
@@ -109,7 +109,7 @@
   {
     "type": "CommandWorker_ComplexInteractive",
     "trigger": "<:wolfysteak:259416736082821121>",
-    "response": "http://i.imgur.com/k6hofjr.png\r\nCan.... can I have that please...?",
+    "response": "https://i.imgur.com/bf45wVl.png\r\nCan.... can I have that please...?",
     "cooldown": 60000,
     "nodes": [
       {
@@ -173,20 +173,20 @@
   {
     "type": "CommandWorker_Simple",
     "trigger": "such a good little awoo!",
-    "response": "http://i.imgur.com/1fLk3JR.gif\r\nThank you! I try really hard! <3",
+    "response": "https://i.imgur.com/ooDP46a.gif\r\nThank you! I try really hard! <3",
     "cooldown": 60000
   },
   {
     "type": "CommandWorker_Simple",
     "trigger": "i love you <@!?451890906975698954>",
-	"mode": "regex",
+    "mode": "regex",
     "response": "Aw.. I love you too <3 ~",
     "cooldown": 60000
   },
   {
     "type": "CommandWorker_Simple",
     "trigger": "aha! caught you wolfy!",
-    "response": "A...foo?\r\nhttp://i.imgur.com/9bTKLuR.png",
+    "response": "A...foo?\r\nhttps://i.imgur.com/7XPfdMA.png",
     "cooldown": 60000
   },
   {
@@ -221,7 +221,7 @@
   {
     "type": "CommandWorker_ComplexInteractive",
     "trigger": "how are you today wolfy?",
-    "response": "http://i.imgur.com/snoljgW.png\r\nPretty great! How are you?",
+    "response": "https://i.imgur.com/Sk2qxie.png\r\nPretty great! How are you?",
     "cooldown": 60000,
     "nodes": [
       {
@@ -260,23 +260,23 @@
   {
     "type": "CommandWorker_Simple",
     "trigger": "*hugs wolfy*",
-    "response": "Hugs are the best!\r\nhttp://i.imgur.com/BOtQCIS.png",
+    "response": "Hugs are the best!\r\nhttps://i.imgur.com/B9YVuYM.png",
     "cooldown": 60000
   },
   {
     "type": "CommandWorker_Simple",
     "trigger": "*headpats wolfy*",
-    "response": "http://i.imgur.com/Je3gP71.jpg",
+    "response": "https://i.imgur.com/vSg5cUW.png",
     "cooldown": 60000
   },
   {
     "type": "CommandWorker_WolfyFetch",
     "trigger": "wolfy fetch!",
-    "response": "Go on, throw it! I swear I'll get it this time.\r\nhttp://i.imgur.com/yjEnMO0.jpg",
+    "response": "Go on, throw it! I swear I'll get it this time.\r\nhttps://i.imgur.com/H1qt5bZ.png",
     "chances": [
       {
         "weight": 6,
-        "response": "I GOFF ET! <:awoo:254007902510120961>\r\nhttp://i.imgur.com/3WdU4Vd.png"
+        "response": "I GOFF ET! <:awoo:254007902510120961>\r\nhttps://i.imgur.com/CqxTOzN.png"
       },
       {
         "weight": 4,
@@ -287,7 +287,7 @@
   {
     "type": "CommandWorker_ComplexInteractive",
     "trigger": "who's my favorite little awoo?",
-    "response": "Is it me? :D\r\nhttp://i.imgur.com/0CpKzFp.png",
+    "response": "Is it me? :D\r\nhttps://i.imgur.com/gkWmd5o.png",
     "cooldown": 60000,
     "nodes": [
       {
@@ -305,20 +305,20 @@
   {
     "type": "CommandWorker_Simple",
     "trigger": "*scratches wolfy*",
-    "response": "Mmmmmmmm...\r\nhttp://i.imgur.com/2NU6kMX.png",
+    "response": "Mmmmmmmm...\r\nhttps://i.imgur.com/d1CBJ1T.png",
     "cooldown": 60000
   },
   {
     "type": "CommandWorker_Simple",
     "trigger": "*hands wolfy a cup of tea*",
-    "response": "Mmm, thank you very much! This is just what I needed today!\r\nhttp://i.imgur.com/FUiOuIs.png",
+    "response": "Mmm, thank you very much! This is just what I needed today!\r\nhttps://i.imgur.com/5L6oPOa.png",
     "cooldown": 60000
   },
   {
     "type": "CommandWorker_ConsecutiveResponses",
     "trigger": "who's a good wolfy?",
     "response": "Is it me?!",
-    "responses": [ "I bet it's me....", "I really hope it's me...", "Wait.. of course it's me! I'm the good Wolfy!\r\nhttp://i.imgur.com/ZO8GwWh.gif" ],
+    "responses": [ "I bet it's me....", "I really hope it's me...", "Wait.. of course it's me! I'm the good Wolfy!\r\nhttps://i.imgur.com/Ikk8Ox5.gif" ],
     "timeout": 1000,
     "cooldown": 60000
   },
@@ -326,14 +326,14 @@
     "type": "CommandWorker_ConsecutiveResponses",
     "trigger": "wolfy i got you a present!",
     "response": "Really?! For me?!",
-    "responses": [ "*opens the present*", "It's perfect! Thank you so much! <:awoo:254007902510120961>\r\nhttp://i.imgur.com/XA2N0Zx.jpg" ],
+    "responses": [ "*opens the present*", "It's perfect! Thank you so much! <:awoo:254007902510120961>\r\nhttps://i.imgur.com/UXxJT11.png" ],
     "timeout": 1000,
     "cooldown": 60000
   },
   {
     "type": "CommandWorker_Simple",
     "trigger": "bad diana!",
-    "response": "Bad kitty! You stop it!\r\nhttp://i.imgur.com/8qec2nT.png",
+    "response": "Bad kitty! You stop it!\r\nhttps://i.imgur.com/2vNSwwT.png",
     "conditions": [
       {
         "type": "CommandCondition_RequireRole",
@@ -382,7 +382,7 @@
     "type": "CommandWorker_Simple",
     "trigger": "(wb|welcome back) +(wolfy|<@451890906975698954>)",
     "mode": "regex",
-    "response": "Thank you! <:awoo:254007902510120961> https://media.giphy.com/media/8vn8GRldK242QmvJT1/giphy.gif",
+    "response": "Thank you! <:awoo:254007902510120961> https://i.imgur.com/6YqTN0E.gif",
     "cooldown": 60000
   },
   {
@@ -399,10 +399,10 @@
     ]
   },
   {
-	  "type": "CommandWorker_Simple",
-	  "trigger": "Wolfy, roll!",
-	  "response": "<a:awooroll:685689670205702145>",
-	  "cooldown": 60000
+      "type": "CommandWorker_Simple",
+      "trigger": "Wolfy, roll!",
+      "response": "<a:awooroll:685689670205702145>",
+      "cooldown": 60000
   },
   {
     "type": "CommandWorker_Simple",
