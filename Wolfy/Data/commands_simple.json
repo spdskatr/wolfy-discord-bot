@@ -65,10 +65,9 @@
   },
   {
     "type": "CommandWorker_Simple",
-    "trigger": "lewd",
+    "trigger": "<:lewdwinnie:297248606514184193>",
     "response": "Hehe...\r\nhttp://imgur.com/sq28eVz",
-    "mode": "contains",
-    "cooldown": 1800000
+    "cooldown": 60000
   },
   {
     "type": "CommandWorker_Simple",
@@ -124,20 +123,6 @@
         "response": "Aww... I really wanted that steak ;~;"
       }
     ]
-  },
-  {
-    "type": "CommandWorker_Simple",
-    "trigger": "bone",
-    "response": "Bone?! Where!? I want a bone please!",
-    "mode": "contains",
-    "cooldown": 1800000
-  },
-  {
-    "type": "CommandWorker_Simple",
-    "trigger": "steak",
-    "response": "Steak?! We have steak?! Why didn't anyone tell me I really want one please can I have one please please please!?",
-    "mode": "contains",
-    "cooldown": 1800000
   },
   {
     "type": "CommandWorker_Simple",
@@ -418,5 +403,11 @@
 	  "trigger": "Wolfy, roll!",
 	  "response": "<a:awooroll:685689670205702145>",
 	  "cooldown": 60000
+  },
+  {
+    "type": "CommandWorker_Simple",
+    "trigger": "i'm a bunny",
+    "response": "I'm a wolfy!",
+    "cooldown": 60000
   }
 ]
